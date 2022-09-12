@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
@@ -24,6 +23,8 @@ import style from './Header.module.scss';
 import imgs from '~/assets/imgs';
 import { Wrapper as PopperWrapper, Menu } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import { InboxIcon, MessagesIcon } from '~/components/Icons';
+import Img from '~/components/Imgs';
 
 const cx = classNames.bind(style);
 
@@ -132,7 +133,12 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <MessagesIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -145,7 +151,7 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Img
                                 src="https://anhdephd.vn/wp-content/uploads/2022/03/hinh-anh-cute-1.jpg"
                                 className={cx('user-avatar')}
                                 alt="userAva"
