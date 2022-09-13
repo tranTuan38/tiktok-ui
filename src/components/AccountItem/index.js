@@ -1,7 +1,8 @@
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import classNames from 'classnames/bind';
+
+import Imgs from '~/components/Imgs';
 import styles from './AccountItem.module.scss';
 
 const cx = classNames.bind(styles);
@@ -9,7 +10,7 @@ const cx = classNames.bind(styles);
 function AccountItem() {
     return (
         <div className={cx('wrapper')}>
-            <img
+            <Imgs
                 className={cx('avatar')}
                 src="https://upanh123.com/wp-content/uploads/2020/12/hinh-ve-cute-dang-yeu.jpg"
                 alt="Hoa"
