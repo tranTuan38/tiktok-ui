@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -20,6 +21,7 @@ import { Wrapper as PopperWrapper, Menu } from '~/components/Popper';
 import { InboxIcon, MessagesIcon, UploadIcon } from '~/components/Icons';
 import Img from '~/components/Imgs';
 import Search from '../Search';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(style);
 
@@ -90,7 +92,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={imgs.logo} alt="TikTok" />
+                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                        <img src={imgs.logo} alt="TikTok" />
+                    </Link>
                 </div>
 
                 <Search />
